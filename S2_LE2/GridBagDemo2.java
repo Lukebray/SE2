@@ -1,5 +1,6 @@
 // Fig. 22.24: GridBagDemo2.java
 // Demonstrating GridBagLayout constants.
+package S2_LE2;
 import javax.swing.JFrame;
 
 public class GridBagDemo2

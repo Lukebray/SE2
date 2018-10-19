@@ -1,5 +1,6 @@
 // Fig. 22.5: MenuFrame.java
 // Demonstrating menus.
+package S2_LE2;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.BorderLayout;

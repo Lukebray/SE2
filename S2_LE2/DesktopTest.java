@@ -1,5 +1,6 @@
 // Fig. 22.12: DesktopTest.java
 // Demonstrating JDesktopPane.
+package S2_LE2;
 import javax.swing.JFrame;
 
 public class DesktopTest 

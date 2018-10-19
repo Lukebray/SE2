@@ -1,5 +1,6 @@
 // Fig. 22.23: GridBagFrame2.java
 // Demonstrating GridBagLayout constants.
+package S2_LE2;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Component;

@@ -1,5 +1,6 @@
 // Fig. 22.21: GridBagFrame.java
 // Demonstrating GridBagLayout.
+package S2_LE2;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Component;

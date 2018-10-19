@@ -1,21 +1,25 @@
-// Fig. 22.17: BoxLayoutDemo.java
-// Demonstrating BoxLayout.
-package S2_LE2;
+// Fig. 24.16: TicTacToeClientTest.java
+// Tests the TicTacToeClient class.
 import javax.swing.JFrame;
 
-public class BoxLayoutDemo
+public class TicTacToeClientTest
 {
-   public static void main(String[] args)
-   { 
-      BoxLayoutFrame boxLayoutFrame = new BoxLayoutFrame();  
-      boxLayoutFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      boxLayoutFrame.setSize(400, 220); 
-      boxLayoutFrame.setVisible(true); 
-   } 
-} // end class BoxLayoutDemo
+   public static void main( String args[] )
+   {
+      TicTacToeClient application; // declare client application
+
+      // if no command line args
+      if ( args.length == 0 )
+         application = new TicTacToeClient( "127.0.0.1" ); // localhost
+      else
+         application = new TicTacToeClient( args[ 0 ] ); // use args
+
+      application.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+   } // end main
+} // end class TicTacToeClientTest
 
 /**************************************************************************
- * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *
+ * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *
  *                                                                        *
  * DISCLAIMER: The authors and publisher of this book have used their     *

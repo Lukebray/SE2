@@ -1,5 +1,6 @@
 // Fig. 22.11: DesktopFrame.java
 // Demonstrating JDesktopPane.
+package S2_LE2;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;

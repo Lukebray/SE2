@@ -1,5 +1,6 @@
 // Fig. 22.16: BoxLayoutFrame.java
 // Demonstrating BoxLayout.
+package S2_LE2;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.Box;

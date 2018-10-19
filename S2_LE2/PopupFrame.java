@@ -1,5 +1,6 @@
 // Fig. 22.7: PopupFrame.java
 // Demonstrating JPopupMenus.
+package S2_LE2;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

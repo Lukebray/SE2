@@ -1,5 +1,6 @@
 // Fig. 22.13: JTabbedPaneFrame.java
 // Demonstrating JTabbedPane.
+package S2_LE2;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JFrame;

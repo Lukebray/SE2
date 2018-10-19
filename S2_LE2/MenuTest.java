@@ -1,5 +1,6 @@
 // Fig. 22.6: MenuTest.java
 // Testing MenuFrame.
+package S2_LE2;
 import javax.swing.JFrame;
 
 public class MenuTest
