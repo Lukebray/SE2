@@ -1,13 +1,18 @@
 package S2_LE1;
 
-//7.1 Account.java
+/*Account.java
+Luke Bray
+B00100787
+22/10/2018
+ */
+
 
 public class Account {
-    private String name; //instance variable
+    private String name; //declaring an instance variable. These are initialised by default
 
-//method to set name in the object
+//a method to set the name in the object
     public void setName(String name) {
-        this.name = name; //store the name
+        this.name = name; //this is referring to the instance variable. It is "shadowed"
     }
 
 //method to retrieve name from object

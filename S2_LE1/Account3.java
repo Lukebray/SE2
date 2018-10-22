@@ -1,16 +1,20 @@
 package S2_LE1;
 //fig 7.5 account2.java
+/*
+Luke Bray
+B00100787
+22/10/2018
+ */
 public class Account3 {
 
     private String name; //instance variable
     private double balance; //instance variable
 
     //constructor to receive 2 params
-    public Account3(String name, Double balance) {
-        this.name = name; //assign name to iv name
+    public Account3(String name, Double balance) { //must declare data type of constructors here
+        this.name = name; //assign name to instance variable name
 
-        //validate bal > 0
-        //if ball !> 0 keep default at 0.0
+        //validate if the balance is > 0 otherwise keep bal @ 0
         if (balance > 0.0) //if bal valid
             this.balance = balance;
     }
