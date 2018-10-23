@@ -1,5 +1,10 @@
 // Fig. 22.7: PopupFrame.java
 // Demonstrating JPopupMenus.
+/*
+Luke Bray
+B00100787
+23/10/2018
+ */
 package S2_LE2;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -11,24 +16,25 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.ButtonGroup;
 
-public class PopupFrame extends JFrame 
+public class PopupFrame extends JFrame //including all items from JFrame class
 {
    private final JRadioButtonMenuItem[] items; // holds items for colors
    private final Color[] colorValues = 
-      {Color.BLUE, Color.YELLOW, Color.RED}; // colors to be used
+      {Color.BLUE, Color.YELLOW, Color.RED}; // colors to be used. These are constant
    private final JPopupMenu popupMenu; // allows user to select color
 
    // no-argument constructor sets up GUI
    public PopupFrame()
    {
-      super("Using JPopupMenus");
+      super("Using JPopupMenus"); //title of the new frame. Currently invisible
 
+      //need to add all of the elements to go into the frame
       ItemHandler handler = new ItemHandler(); // handler for menu items
-      String[] colors = {"Blue", "Yellow", "Red"};
+      String[] colors = {"Blue", "Yellow", "Red"}; //an array of colours
 
-      ButtonGroup colorGroup = new ButtonGroup(); // manages color items
+      ButtonGroup colorGroup = new ButtonGroup(); // manages color items by creating a buttongroup
       popupMenu = new JPopupMenu(); // create pop-up menu
-      items = new JRadioButtonMenuItem[colors.length];
+      items = new JRadioButtonMenuItem[colors.length]; //creating the correct amount of radio buttons
 
       // construct menu item, add to pop-up menu, enable event handling
       for (int count = 0; count < items.length; count++) 
@@ -42,17 +48,18 @@ public class PopupFrame extends JFrame
       setBackground(Color.WHITE); 
 
       // declare a MouseListener for the window to display pop-up menu
+      //a mouse listener is listening specifically for mouse clicks
       addMouseListener(
          new MouseAdapter() // anonymous inner class
          {  
-            // handle mouse press event
-            @Override
+            // what to do when the mouse is pressed
+            @Override //use the method declared here not in the super class
             public void mousePressed(MouseEvent event)
             { 
                checkForTriggerEvent(event); 
             } 
 
-            // handle mouse release event
+            // what to do when the mouse is released
             @Override
             public void mouseReleased(MouseEvent event)
             { 
@@ -60,6 +67,7 @@ public class PopupFrame extends JFrame
             }
 
             // determine whether event should trigger pop-up menu
+            //popup menu triggered if event is a popup trigger - MouseEvent is a popup trigger
             private void checkForTriggerEvent(MouseEvent event)
             {
                if (event.isPopupTrigger()) 
@@ -80,9 +88,9 @@ public class PopupFrame extends JFrame
          // determine which menu item was selected
          for (int i = 0; i < items.length; i++)
          {
-            if (event.getSource() == items[i]) 
+            if (event.getSource() == items[i]) //if the selected item is the same as the one in [i] in array
             {
-               getContentPane().setBackground(colorValues[i]);
+               getContentPane().setBackground(colorValues[i]); //set the background to that value
                return;
             } 
          } 
@@ -90,18 +98,5 @@ public class PopupFrame extends JFrame
    } // end private inner class ItemHandler
 } // end class PopupFrame
 
-/**************************************************************************
- * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/
+
  
