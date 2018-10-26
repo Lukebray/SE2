@@ -1,5 +1,12 @@
 // Fig. 22.21: GridBagFrame.java
 // Demonstrating GridBagLayout.
+/*
+Luke Bray
+B00100787
+24/10/2018
+ */
+
+//grid to make layout easier
 package S2_LE2;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -21,15 +28,16 @@ public class GridBagFrame extends JFrame
       super("GridBagLayout");
       layout = new GridBagLayout();
       setLayout(layout); // set frame layout
-      constraints = new GridBagConstraints(); // instantiate constraints
+      constraints = new GridBagConstraints(); // instantiate constraints. need this to set the size of the grid constraints
 
       // create GUI components
-      JTextArea textArea1 = new JTextArea("TextArea1", 5, 10);
+      JTextArea textArea1 = new JTextArea("TextArea1", 5, 10); //creating a text area a defining its size
       JTextArea textArea2 = new JTextArea("TextArea2", 2, 2);
 
       String[] names = {"Iron", "Steel", "Brass"};
-      JComboBox<String> comboBox = new JComboBox<String>(names);
+      JComboBox<String> comboBox = new JComboBox<String>(names); //creating a dropdown menu
 
+      //creating 3 buttons
       JTextField textField = new JTextField("TextField");
       JButton button1 = new JButton("Button 1");
       JButton button2 = new JButton("Button 2");
@@ -38,7 +46,7 @@ public class GridBagFrame extends JFrame
       // weightx and weighty for textArea1 are both 0: the default
       // anchor for all components is CENTER: the default
       constraints.fill = GridBagConstraints.BOTH;
-      addComponent(textArea1, 0, 0, 1, 3);    
+      addComponent(textArea1, 0, 0, 1, 3); //adding text area to the frame@
        
       // weightx and weighty for button1 are both 0: the default
       constraints.fill = GridBagConstraints.HORIZONTAL;
@@ -79,17 +87,3 @@ public class GridBagFrame extends JFrame
    }
 } // end class GridBagFrame
 
-/**************************************************************************
- * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/

@@ -1,5 +1,10 @@
 // Fig. 22.23: GridBagFrame2.java
 // Demonstrating GridBagLayout constants.
+/*
+Luke Bray
+B00100787
+26/10/2018
+ */
 package S2_LE2;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -19,26 +24,29 @@ public class GridBagFrame2 extends JFrame
    public GridBagFrame2()
    {
       super("GridBagLayout");
+      //this is where we set the layout manager. dont have to do this but is recommended
       layout = new GridBagLayout();
       setLayout(layout);
       constraints = new GridBagConstraints(); // instantiate constraints
 
       // create GUI components
       String[] metals = {"Copper", "Aluminum", "Silver"};
-      JComboBox<String> comboBox = new JComboBox<String>(metals);
+      JComboBox<String> comboBox = new JComboBox<String>(metals); //lets user choose several choices
 
-      JTextField textField = new JTextField("TextField");
+      JTextField textField = new JTextField("TextField"); //allows editing of single line of text
 
-      String[] fonts = {"Serif", "Monospaced"};
-      JList list = new JList(fonts);
+      String[] fonts = {"Serif", "Monospaced"}; //choice of fonts
+      JList list = new JList(fonts); //list for user to choose fonts
 
-      String[] names = {"zero", "one", "two", "three", "four"};
-      JButton[] buttons = new JButton[names.length];
+      String[] names = {"zero", "one", "two", "three", "four"}; //list of names
+      JButton[] buttons = new JButton[names.length]; //creating enough buttons
 
+      //creating the buttons themselves
       for (int count = 0; count < buttons.length; count++)
          buttons[count] = new JButton(names[count]);
 
       // define GUI component constraints for textField
+      //weightx/y
       constraints.weightx = 1;
       constraints.weighty = 1;  
       constraints.fill = GridBagConstraints.BOTH;
@@ -84,17 +92,3 @@ public class GridBagFrame2 extends JFrame
    } 
 } // end class GridBagFrame2
 
-/**************************************************************************
- * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/

@@ -1,6 +1,11 @@
 // Fig. 24.5: Server.java
 // Set up a server that will receive a connection from a client, send 
 // a string to the client, and close the connection.
+/*
+Luke Bray
+B00100787
+26/10/2018
+ */
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -32,8 +37,8 @@ public class Server extends JFrame
       super( "Server" );
 
       enterField = new JTextField(); // create enterField
-      enterField.setEditable( false );
-      enterField.addActionListener(
+      enterField.setEditable( false ); //text filed is not editable
+      enterField.addActionListener( //listen for an action
          new ActionListener() 
          {
             // send message to client
@@ -45,10 +50,10 @@ public class Server extends JFrame
          } // end anonymous inner class
       ); // end call to addActionListener
 
-      add( enterField, BorderLayout.NORTH );
+      add( enterField, BorderLayout.NORTH ); //puts enterfield in "North" section of layout
 
       displayArea = new JTextArea(); // create displayArea
-      add( new JScrollPane( displayArea ), BorderLayout.CENTER );
+      add( new JScrollPane( displayArea ), BorderLayout.CENTER ); //puts display area in center region with scroll bar
 
       setSize( 300, 150 ); // set size of window
       setVisible( true ); // show window
@@ -69,7 +74,7 @@ public class Server extends JFrame
                getStreams(); // get input & output streams
                processConnection(); // process connection
             } // end try
-            catch ( EOFException eofException ) 
+            catch ( EOFException eofException ) //this is error trapping
             {
                displayMessage( "\nServer terminated connection" );
             } // end catch
@@ -80,14 +85,14 @@ public class Server extends JFrame
             } // end finally
          } // end while
       } // end try
-      catch ( IOException ioException ) 
+      catch ( IOException ioException )  //more error trapping
       {
          ioException.printStackTrace();
       } // end catch
    } // end method runServer
 
    // wait for connection to arrive, then display connection info
-   private void waitForConnection() throws IOException
+   private void waitForConnection() throws IOException //throw is intentionally throwing an exception
    {
       displayMessage( "Waiting for connection\n" );
       connection = server.accept(); // allow server to accept connection            
@@ -96,7 +101,7 @@ public class Server extends JFrame
    } // end method waitForConnection
 
    // get streams to send and receive data
-   private void getStreams() throws IOException
+   private void getStreams() throws IOException //intentionally throwing an exception
    {
       // set up output stream for objects
       output = new ObjectOutputStream( connection.getOutputStream() );
@@ -117,6 +122,7 @@ public class Server extends JFrame
       // enable enterField so server user can send messages
       setTextFieldEditable( true );
 
+      //checking for messages with try catch
       do // process messages sent from client
       { 
          try // read message and display it
@@ -129,7 +135,7 @@ public class Server extends JFrame
             displayMessage( "\nUnknown object type received" );
          } // end catch
 
-      } while ( !message.equals( "CLIENT>>> TERMINATE" ) );
+      } while ( !message.equals( "CLIENT>>> TERMINATE" ) ); //if client types TERMINATE close
    } // end method processConnection
 
    // close streams and socket
@@ -155,8 +161,8 @@ public class Server extends JFrame
    {
       try // send object to client
       {
-         output.writeObject( "SERVER>>> " + message );
-         output.flush(); // flush output to client
+         output.writeObject( "SERVER>>> " + message ); //what is coming from server
+         output.flush(); // flush output to client. this is pushing to client
          displayMessage( "\nSERVER>>> " + message );
       } // end try
       catch ( IOException ioException ) 
@@ -193,18 +199,3 @@ public class Server extends JFrame
       ); // end call to SwingUtilities.invokeLater
    } // end method setTextFieldEditable
 } // end class Server
-
-/**************************************************************************
- * (C) Copyright 1992-2007 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/

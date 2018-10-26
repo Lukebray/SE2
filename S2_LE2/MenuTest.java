@@ -1,5 +1,10 @@
 // Fig. 22.6: MenuTest.java
 // Testing MenuFrame.
+/*
+Luke Bray
+B00100787
+26/10/2018
+ */
 package S2_LE2;
 import javax.swing.JFrame;
 
